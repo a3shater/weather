@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex flex-column mt-5">
+        <div class="dropdown align-self-end">
+            <div class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Actions
+            </div>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" onmousedown="delAlls()">Delete</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </div>
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <td></td>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>Ahmed</td>
+                <td>Ali</td>
+                <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>omer</td>
+                <td>Ali</td>
+                <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="" id=""></td>
+                <td>mohammed</td>
+                <td>Ali</td>
+                <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container text-center text-white bg-primary p-3 mt-5 mb-5">
+        <h1>WEATHER TEMPLATE</h1>
+        <div class="row m-1">
+            <div class="col bg-white bg-opacity-25 m-3 p-3 rounded-3">
+                <h5 style="border-bottom:3px solid white;
+                padding-bottom:10px;" class="">LOCAL WEATHER REPORT</h5>
+                <div class="row">
+                    <div class="col">
+                        <img src="images/sun.png" alt="" style="filter:drop-shadow(0 0 20px white)" class="mt-4 mb-5 statImg">
+                        <p class="fs-6 fw-bold ">🚩14 KM/H SW</p>
+                    </div>
+                    <div class="col">
+                        <p class="fs-3 fw-bold">SUNDAY</p>
+                        <p class="fw-bold mb-4 stat">SUNNY</p>
+                        <p class="fw-bold fs-4">22 °C</p>
+                        <p class="fw-bold fs-4">71.6 °F</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col bg-white bg-opacity-25 m-3 p-3 rounded-3"></div>
+        </div>
+        <div class="row bg-white bg-opacity-25 m-3 p-3 rounded-3">
+            <div class="col" style="border-right:2px solid white">
+                <p class="fs-4 fw-bold">MONDAY</p>
+                <p class="stat d-none"></p>
+                <img src="images/SunCloud.png" alt="" style="filter:drop-shadow(0 0 20px white)" class="mb-5 mt-3 statImg">
+                <p class="fw-bold fs-4">22 °C</p>
+                <p class="fw-bold fs-4">71.6 °F</p>
+            </div>
+            <div class="col" style="border-right:2px solid white">
+                <p class="fs-4 fw-bold">TUESDAY</p>
+                <p class="stat d-none"></p>
+                <img src="images/Cloud.png" alt="" style="filter:drop-shadow(0 0 20px white)" class="mb-5  mt-3 statImg">
+                <p class="fw-bold fs-4">22 °C</p>
+                <p class="fw-bold fs-4">71.6 °F</p>
+            </div>
+            <div class="col" style="border-right:2px solid white">
+                <p class="fs-4 fw-bold">WEDNESDAY</p>
+                <p class="stat d-none"></p>
+                <img src="images/rain.png" alt="" style="filter:drop-shadow(0 0 20px white)" class="mb-5  mt-3 statImg">
+                <p class="fw-bold fs-4">22 °C</p>
+                <p class="fw-bold fs-4">71.6 °F</p>
+            </div>
+            <div class="col" style="border-right:2px solid white">
+                <p class="fs-4 fw-bold">THURSDAY</p>
+                <p class="stat d-none"></p>
+                <img src="images/RainThunder.png" alt="" style="filter:drop-shadow(0 0 20px white)" class="mb-5  mt-3 statImg">
+                <p class="fw-bold fs-4">22 °C</p>
+                <p class="fw-bold fs-4">71.6 °F</p>
+            </div>
+            <div class="col">
+                <p class="fs-4 fw-bold">FRIDAY</p>
+                <p class="stat d-none"></p>
+                <img src="images/Snow.png" alt="" style="filter:drop-shadow(0 0 20px white)" class="mb-5  mt-3 statImg">
+                <p class="fw-bold fs-4">22 °C</p>
+                <p class="fw-bold fs-4">71.6 °F</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let btns = document.getElementsByTagName("button")
+        Array.from(btns).forEach(element => {
+            element.addEventListener('click', () => {
+                if (confirm().valueOf()) {
+                    element.parentElement.parentElement.remove()
+                }
+            })
+        });
+
+        function delAlls() {
+            if (confirm().valueOf()) {
+                Array.from(document.getElementsByTagName('input')).forEach(
+                    ele => {
+                        if (ele.checked) {
+                            ele.parentElement.parentElement.remove()
+                        }
+                    }
+                )
+            }
+        }
+    </script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
